@@ -7,7 +7,7 @@ function App() {
   const [sushis, setSushis] = useState([]);
   const [displayedSushis, setDisplayedSushis] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
-  const [eatenSushi, setAsEatenSushi] = useState(false)
+  const [ budget, setBudget ] = useState(100)
 
   const [plates, setPlates] = useState([])
 
@@ -34,8 +34,8 @@ function App() {
 
   return (
     <div className="app">
-      <SushiContainer addEmptyPlate={addEmptyPlate} moreSushiClick={moreSushiClick} displayedSushis={displayedSushis} />
-      <Table plates={plates} />
+      <SushiContainer addEmptyPlate={addEmptyPlate} moreSushiClick={moreSushiClick} displayedSushis={displayedSushis} budget={budget} setBudget={setBudget} />
+      <Table budget={budget} setBudget={setBudget} plates={plates} />
     </div>
   );
 }
