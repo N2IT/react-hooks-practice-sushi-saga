@@ -6,14 +6,15 @@ function Sushi({ sushi, addEmptyPlate, budget, setBudget }) {
 
 
   function handleSushiClick() {
-    if (eatenSushi === false) {
+    if (eatenSushi === false && budget >= sushi.price) {
+      const updatedBudget = budget - sushi.price
       setAsEatenSushi(!eatenSushi)
       addEmptyPlate()
-      const updatedBudget = budget - sushi.price
       setBudget(updatedBudget)
-    } else {}
-    
-    }
+
+    } else { }
+
+  }
 
   return (
     <div key={id} className="sushi">
@@ -35,4 +36,3 @@ function Sushi({ sushi, addEmptyPlate, budget, setBudget }) {
 }
 
 export default Sushi;
- 
