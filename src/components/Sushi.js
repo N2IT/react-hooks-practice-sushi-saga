@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Sushi({ sushi }) {
   const { id, name, img_url, price, created_at } = sushi
+  const [ eatSushi, setAsEatenSushi ] = useState(false)
 
   function handleClick() {
-    console.log('clicked')
+    setAsEatenSushi(!eatSushi)
   }
 
   return (
     <div key={id} className="sushi">
       <div className="plate" onClick={handleClick}>
         {/* Tell me if this sushi has been eaten! */}
-        {false ? null : (
+        {eatSushi ? null : (
           <img
             src={img_url}
-            alt={{name} + "Sushi"}
+            alt={name + "Sushi"}
             width="100%"
           />
         )}
@@ -27,3 +28,4 @@ function Sushi({ sushi }) {
 }
 
 export default Sushi;
+ 

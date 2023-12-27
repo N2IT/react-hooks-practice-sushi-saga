@@ -19,16 +19,14 @@ function SushiContainer(props) {
   function moreSushiClick() {
     const endIndex = startIndex + 4;
     const nextSushi = sushis.slice(startIndex, endIndex);
-
     setStartIndex(endIndex);
-
     setDisplayedSushis(nextSushi);
   }
 
   return (
     <div className="belt">
       {displayedSushis.map((sushi) => (
-        <Sushi sushi={sushi} key={sushi.id} />
+        <Sushi sushi={sushi} key={sushi.id} setSushis={setSushis} />
       ))}
       <MoreButton moreSushiClick={moreSushiClick} />
     </div>

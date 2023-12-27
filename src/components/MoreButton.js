@@ -1,6 +1,6 @@
 import React from "react";
 
-function MoreButton({ sushi, moreSushiClick }) {
+function MoreButton({ moreSushiClick }) {
 
   return <button onClick={moreSushiClick}>More sushi!</button>;
 }
