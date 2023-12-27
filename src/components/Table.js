@@ -7,17 +7,18 @@ function Table({ plates = [], budget, setBudget }) {
   ));
 
   const [newFunds, setNewFunds] = useState(0)
-  
-  function handleChange(e){
+
+  function handleChange(e) {
     setNewFunds(parseFloat(e.target.value))
   }
 
-  
+
   function addedFundsSubmit(e) {
     e.preventDefault()
     const newBudget = budget + newFunds
     setBudget(newBudget)
     setNewFunds(0)
+
   }
 
   return (
@@ -29,13 +30,13 @@ function Table({ plates = [], budget, setBudget }) {
         <div className="stack">{emptyPlates}</div>
       </div>
       <form onSubmit={addedFundsSubmit}>
-        <input 
-        type="number" 
-        onChange={handleChange} 
-        id="funds" 
-        step="1.00"
-        value={newFunds} 
-        placeholder='Additional Funds are Available'></input>
+        <input
+          type="number"
+          onChange={handleChange}
+          id="funds"
+          step="1.00"
+          value={newFunds}
+          placeholder='Additional Funds are Available'></input>
         <button type="submit">Add Funds</button>
       </form>
     </>

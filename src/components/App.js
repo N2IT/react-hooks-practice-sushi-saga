@@ -7,8 +7,7 @@ function App() {
   const [sushis, setSushis] = useState([]);
   const [displayedSushis, setDisplayedSushis] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
-  const [ budget, setBudget ] = useState(50)
-
+  const [budget, setBudget] = useState(50)
   const [plates, setPlates] = useState([])
 
   useEffect(() => {
@@ -41,7 +40,7 @@ function App() {
   return (
     <div className="app">
       <SushiContainer addEmptyPlate={addEmptyPlate} moreSushiClick={moreSushiClick} displayedSushis={displayedSushis} budget={budget} setBudget={setBudget} />
-      <Table budget={budget} setBudget={setBudget} plates={plates}  />
+      <Table budget={budget} setBudget={setBudget} plates={plates} />
     </div>
   );
 }
