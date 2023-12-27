@@ -6,19 +6,17 @@ function Sushi({ sushi, addEmptyPlate, budget, setBudget }) {
 
 
   function handleSushiClick() {
-    if (eatenSushi === false && budget >= sushi.price) {
-      const updatedBudget = budget - sushi.price
+    if (eatenSushi === false && budget >= price) {
+      const updatedBudget = budget - price
       setAsEatenSushi(!eatenSushi)
       addEmptyPlate()
       setBudget(updatedBudget)
-
     } else { }
-
   }
 
   return (
     <div key={id} className="sushi">
-      <div className="plate" onClick={() => handleSushiClick(sushi)}>
+      <div className="plate" onClick={handleSushiClick}>
         {/* Tell me if this sushi has been eaten! */}
         {eatenSushi ? null : (
           <img
