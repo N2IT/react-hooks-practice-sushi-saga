@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Sushi({ sushi, addEmptyPlate }) {
+function Sushi({ sushi, addEmptyPlate, budget, setBudget }) {
   const { id, name, img_url, price, created_at } = sushi
   const [eatenSushi, setAsEatenSushi] = useState(false)
 
@@ -9,6 +9,8 @@ function Sushi({ sushi, addEmptyPlate }) {
     if (eatenSushi === false) {
       setAsEatenSushi(!eatenSushi)
       addEmptyPlate()
+      const updatedBudget = budget - sushi.price
+      setBudget(updatedBudget)
     } else {}
     
     }
