@@ -6,8 +6,11 @@ function Sushi({ sushi, addEmptyPlate }) {
 
 
   function handleSushiClick() {
-    setAsEatenSushi(!eatenSushi)
-    addEmptyPlate()
+    if (eatenSushi === false) {
+      setAsEatenSushi(!eatenSushi)
+      addEmptyPlate()
+    } else {}
+    
     }
 
   return (
